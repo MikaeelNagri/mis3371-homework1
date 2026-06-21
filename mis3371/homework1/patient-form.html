@@ -1,0 +1,592 @@
+<!--
+Program name: patient-form.html
+Author: Mikaeel Nagri
+Date created: June 20, 2026
+Date last edited: June 21, 2026
+Version: 1.2
+Description: Patient registration form page.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeRDocs Medical - Patient Registration Form</title>
+    <!-- external css file -->
+    <link
+        href="style.css"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- banner section -->
+    <div class="banner">
+
+        <img
+            src="logo.png"
+            alt="WeRDocs Medical Logo"
+            width="60"
+            height="60">
+
+        <span class="company-name">WeRDocs Medical</span>
+
+        <!-- dynamic date -->
+        <div
+            class="date-text"
+            id="today-date">
+            <script>
+                const today = new Date();
+
+                const dayNames = new Array();
+                dayNames[0] = "Sunday";
+                dayNames[1] = "Monday";
+                dayNames[2] = "Tuesday";
+                dayNames[3] = "Wednesday";
+                dayNames[4] = "Thursday";
+                dayNames[5] = "Friday";
+                dayNames[6] = "Saturday";
+
+                const monthNames = new Array();
+                monthNames[0] = "Jan";
+                monthNames[1] = "Feb";
+                monthNames[2] = "Mar";
+                monthNames[3] = "Apr";
+                monthNames[4] = "May";
+                monthNames[5] = "June";
+                monthNames[6] = "July";
+                monthNames[7] = "Aug";
+                monthNames[8] = "Sept";
+                monthNames[9] = "Oct";
+                monthNames[10] = "Nov";
+                monthNames[11] = "Dec";
+
+                let dayNumber = today.getDay();
+                let monthNumber = today.getMonth();
+                let dateNumber = today.getDate();
+                let fullYear = today.getFullYear();
+                let dayName = dayNames[dayNumber];
+                let monthName = monthNames[monthNumber];
+
+                // add st nd rd or th
+                let dateEnding = "th";
+                if (dateNumber === 1 || dateNumber === 21 || dateNumber === 31) {
+                    dateEnding = "st";
+                }
+                if (dateNumber === 2 || dateNumber === 22) {
+                    dateEnding = "nd";
+                }
+                if (dateNumber === 3 || dateNumber === 23) {
+                    dateEnding = "rd";
+                }
+
+                let dateText = "today is: " + dayName + ", " + monthName + " " + dateNumber + dateEnding + ", " + fullYear;
+                document.getElementById("today-date").innerHTML = dateText;
+            </script>
+        </div>
+
+    </div>
+
+
+    <!-- main form section -->
+    <div id="main-content">
+
+        <h1>Patient Registration Form</h1>
+
+        <p>
+            Please fill out all of the information below to register as a new patient
+            at WeRDocs Medical. 
+        </p>
+
+        <!-- no method because this is client side only -->
+        <form action="thankyou.html">
+
+            <table>
+
+                <tr>
+                    <th>
+                        <label for="firstName">First Name</label>
+                    </th>
+                    <th>
+                        <label for="middleInitial">Middle Initial</label>
+                    </th>
+                    <th>
+                        <label for="lastName">Last Name </label>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <input
+                            type="text"
+                            id="firstName"
+                            name="firstName"
+                            maxlength="30"
+                            required>
+                    </td>
+                    <td>
+                        <input
+                            type="text"
+                            id="middleInitial"
+                            name="middleInitial"
+                            maxlength="1">
+                    </td>
+                    <td>
+                        <input
+                            type="text"
+                            id="lastName"
+                            name="lastName"
+                            maxlength="30"
+                            required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th colspan="3">
+                        <label for="userId">User ID (max 20 characters) </label>
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input
+                            type="text"
+                            id="userId"
+                            name="userId"
+                            maxlength="20"
+                            required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th colspan="3">
+                        <label for="password">Password </label>
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th colspan="3">
+                        <label for="reEnterPassword">Re-Enter Password </label>
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input
+                            type="password"
+                            id="reEnterPassword"
+                            name="reEnterPassword"
+                            required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th colspan="3">
+                        <label for="dateOfBirth">Date of Birth </label>
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input
+                            type="text"
+                            id="dateOfBirth"
+                            name="dateOfBirth"
+                            placeholder="MM/DD/YYYY"
+                            maxlength="10"
+                            required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th colspan="3">
+                        <label for="socialSecurity">Social Security Number </label>
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input
+                            type="password"
+                            id="socialSecurity"
+                            name="socialSecurity"
+                            maxlength="11"
+                            minlength="9"
+                            required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th colspan="3">
+                        <label for="addressLine1">Address Line 1 </label>
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input
+                            type="text"
+                            id="addressLine1"
+                            name="addressLine1"
+                            maxlength="30"
+                            required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th colspan="3">
+                        <label for="addressLine2">Address Line 2</label>
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input
+                            type="text"
+                            id="addressLine2"
+                            name="addressLine2"
+                            maxlength="30">
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        <label for="city">City </label>
+                    </th>
+                    <th>
+                        <label for="state">State </label>
+                    </th>
+                    <th>
+                        <label for="zipCode">Zip Code </label>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <input
+                            type="text"
+                            id="city"
+                            name="city"
+                            maxlength="30"
+                            required>
+                    </td>
+                    <td>
+                        <select
+                            id="state"
+                            name="state"
+                            required>
+                            <option value="">Select State</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="PR">Puerto Rico</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input
+                            type="text"
+                            id="zipCode"
+                            name="zipCode"
+                            maxlength="10"
+                            minlength="5"
+                            required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th colspan="3">
+                        <label for="emailAddress">Email Address </label>
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input
+                            type="email"
+                            id="emailAddress"
+                            name="emailAddress"
+                            required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th colspan="3">
+                        <label for="phoneNumber">Phone Number </label>
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input
+                            type="tel"
+                            id="phoneNumber"
+                            name="phoneNumber"
+                            placeholder="555-555-5555"
+                            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                            required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th colspan="3">
+                        <label for="symptoms">Please describe your current symptoms</label>
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <textarea
+                            id="symptoms"
+                            name="symptoms"
+                            rows="3"
+                            cols="50"></textarea>
+                    </td>
+                </tr>
+
+                <!-- checkboxes -->
+                <tr>
+                    <th colspan="3">Check all of the following that apply - Have you had:</th>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input
+                            type="checkbox"
+                            id="chickenPox"
+                            name="history"
+                            value="chickenPox">
+                        <label for="chickenPox">Chicken Pox</label>
+                        <br>
+                        <input
+                            type="checkbox"
+                            id="measles"
+                            name="history"
+                            value="measles">
+                        <label for="measles">Measles</label>
+                        <br>
+                        <input
+                            type="checkbox"
+                            id="covid19"
+                            name="history"
+                            value="covid19">
+                        <label for="covid19">Covid-19</label>
+                        <br>
+                        <input
+                            type="checkbox"
+                            id="smallPox"
+                            name="history"
+                            value="smallPox">
+                        <label for="smallPox">Small Pox</label>
+                        <br>
+                        <input
+                            type="checkbox"
+                            id="tetanus"
+                            name="history"
+                            value="tetanus">
+                        <label for="tetanus">Tetanus</label>
+                        <br>
+                        <input
+                            type="checkbox"
+                            id="mumps"
+                            name="history"
+                            value="mumps">
+                        <label for="mumps">Mumps</label>
+                    </td>
+                </tr>
+
+                <!-- gender radios -->
+                <tr>
+                    <th colspan="3">Gender </th>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input
+                            type="radio"
+                            id="genderMale"
+                            name="gender"
+                            value="male"
+                            required>
+                        <label for="genderMale">Male</label>
+                        <br>
+                        <input
+                            type="radio"
+                            id="genderFemale"
+                            name="gender"
+                            value="female">
+                        <label for="genderFemale">Female</label>
+                        <br>
+                        <input
+                            type="radio"
+                            id="genderOther"
+                            name="gender"
+                            value="other">
+                        <label for="genderOther">Other</label>
+                    </td>
+                </tr>
+
+                <!-- vaccinated radios -->
+                <tr>
+                    <th colspan="3">Have you been vaccinated? </th>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input
+                            type="radio"
+                            id="vaccinatedYes"
+                            name="vaccinated"
+                            value="yes"
+                            required>
+                        <label for="vaccinatedYes">Yes</label>
+                        <br>
+                        <input
+                            type="radio"
+                            id="vaccinatedNo"
+                            name="vaccinated"
+                            value="no">
+                        <label for="vaccinatedNo">No</label>
+                    </td>
+                </tr>
+
+                <!-- insurance radios -->
+                <tr>
+                    <th colspan="3">Do you have insurance? </th>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input
+                            type="radio"
+                            id="insuranceYes"
+                            name="insurance"
+                            value="yes"
+                            required>
+                        <label for="insuranceYes">Yes</label>
+                        <br>
+                        <input
+                            type="radio"
+                            id="insuranceNo"
+                            name="insurance"
+                            value="no">
+                        <label for="insuranceNo">No</label>
+                    </td>
+                </tr>
+
+                <!-- health slider -->
+                <tr>
+                    <th colspan="3">
+                        <label for="healthScale">On a scale of 1 to 10, 10 being feeling good, how is your health?</label>
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input
+                            type="range"
+                            id="healthScale"
+                            name="healthScale"
+                            min="1"
+                            max="10"
+                            value="5">
+                        <span>(1 = bad, 10 = good)</span>
+                    </td>
+                </tr>
+
+                <!-- form buttons -->
+                <tr class="button-row">
+                    <td colspan="3">
+                        <input
+                            type="reset"
+                            value="CLEAR AND START OVER">
+                        <input
+                            type="submit"
+                            value="Submit">
+                    </td>
+                </tr>
+
+            </table>
+
+        </form>
+
+    </div>
+
+
+    <!-- footer section -->
+    <div class="footer">
+
+        <p class="footer-company">WeRDocs Medical</p>
+
+        <button
+            id="contact-button"
+            type="button"
+            onclick="alert('Please email us at contact@werdocsmedical.com');">
+            CONTACT US
+        </button>
+
+        <p>PO BOX 18881</p>
+        <p>Sugar Land TX 77496</p>
+
+        <p>
+            <a
+                href="https://www.facebook.com/"
+                target="_blank">Facebook</a>
+            |
+            <a
+                href="https://www.twitter.com/"
+                target="_blank">Twitter</a>
+            |
+            <a
+                href="https://www.instagram.com/"
+                target="_blank">Instagram</a>
+        </p>
+
+    </div>
+
+</body>
+
+</html>
+<!-- end patient-form.html -->

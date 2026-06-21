@@ -1,0 +1,141 @@
+<!--
+Program name: thankyou.html
+Author: Mikaeel Nagri
+Date created: June 20, 2026
+Date last edited: June 21, 2026
+Version: 1.2
+Description: Thank you page after form submit.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeRDocs Medical - Thank You</title>
+    <!-- external css file -->
+    <link
+        href="style.css"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- banner section -->
+    <div class="banner">
+
+        <img
+            src="logo.png"
+            alt="WeRDocs Medical Logo"
+            width="60"
+            height="60">
+
+        <span class="company-name">WeRDocs Medical</span>
+
+        <!-- dynamic date -->
+        <div
+            class="date-text"
+            id="today-date">
+            <script>
+                const today = new Date();
+
+                const dayNames = new Array();
+                dayNames[0] = "Sunday";
+                dayNames[1] = "Monday";
+                dayNames[2] = "Tuesday";
+                dayNames[3] = "Wednesday";
+                dayNames[4] = "Thursday";
+                dayNames[5] = "Friday";
+                dayNames[6] = "Saturday";
+
+                const monthNames = new Array();
+                monthNames[0] = "Jan";
+                monthNames[1] = "Feb";
+                monthNames[2] = "Mar";
+                monthNames[3] = "Apr";
+                monthNames[4] = "May";
+                monthNames[5] = "June";
+                monthNames[6] = "July";
+                monthNames[7] = "Aug";
+                monthNames[8] = "Sept";
+                monthNames[9] = "Oct";
+                monthNames[10] = "Nov";
+                monthNames[11] = "Dec";
+
+                let dayNumber = today.getDay();
+                let monthNumber = today.getMonth();
+                let dateNumber = today.getDate();
+                let fullYear = today.getFullYear();
+                let dayName = dayNames[dayNumber];
+                let monthName = monthNames[monthNumber];
+
+                // add st nd rd or th
+                let dateEnding = "th";
+                if (dateNumber === 1 || dateNumber === 21 || dateNumber === 31) {
+                    dateEnding = "st";
+                }
+                if (dateNumber === 2 || dateNumber === 22) {
+                    dateEnding = "nd";
+                }
+                if (dateNumber === 3 || dateNumber === 23) {
+                    dateEnding = "rd";
+                }
+
+                let dateText = "today is: " + dayName + ", " + monthName + " " + dateNumber + dateEnding + ", " + fullYear;
+                document.getElementById("today-date").innerHTML = dateText;
+            </script>
+        </div>
+
+    </div>
+
+
+    <!-- main content -->
+    <div id="main-content">
+
+        <h1>Registration Complete</h1>
+
+        <p>Thank you for your submission.</p>
+
+        <p>
+            <a href="patient-form.html">Click here to go back to the registration form</a>
+        </p>
+
+    </div>
+
+
+    <!-- footer section -->
+    <div class="footer">
+
+        <p class="footer-company">WeRDocs Medical</p>
+
+        <button
+            id="contact-button"
+            type="button"
+            onclick="alert('Please email us at contact@werdocsmedical.com');">
+            CONTACT US
+        </button>
+
+        <p>PO BOX 18881</p>
+        <p>Sugar Land TX 77496</p>
+
+        <p>
+            <a
+                href="https://www.facebook.com/"
+                target="_blank">Facebook</a>
+            |
+            <a
+                href="https://www.twitter.com/"
+                target="_blank">Twitter</a>
+            |
+            <a
+                href="https://www.instagram.com/"
+                target="_blank">Instagram</a>
+        </p>
+
+    </div>
+
+</body>
+
+</html>
+<!-- end thankyou.html -->
