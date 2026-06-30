@@ -1,0 +1,95 @@
+
+<!--
+Program name: thankyou.html
+Author: Mikaeel Nagri
+Date created: June 20, 2026
+Date last edited: June 30, 2026
+Version: 3.0
+Description: Thank you page after Homework 3 form submission.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeRDocs Medical - Thank You</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="banner">
+
+        <img
+            src="logo.png"
+            alt="WeRDocs Medical Logo"
+            width="60"
+            height="60">
+
+        <span class="company-name">
+            WeRDocs Medical
+        </span>
+
+        <div id="today-date"></div>
+
+    </div>
+
+    <div id="main-content">
+
+        <h1>Registration Complete</h1>
+
+        <p>
+            Thank you for your submission. We will be contacting you shortly.
+        </p>
+
+        <br>
+
+        <a href="homework3.html">
+            Return to Registration Form
+        </a>
+
+    </div>
+
+    <div class="footer">
+
+        <p>
+            WeRDocs Medical
+        </p>
+
+        <p>
+            PO BOX 18881<br>
+            Sugar Land, TX 77496
+        </p>
+
+        <p>
+            <a href="https://www.facebook.com/" target="_blank">
+                Facebook
+            </a>
+            |
+            <a href="https://www.instagram.com/" target="_blank">
+                Instagram
+            </a>
+            |
+            <a href="https://www.twitter.com/" target="_blank">
+                Twitter
+            </a>
+        </p>
+
+    </div>
+
+    <script>
+
+        const today = new Date();
+
+        document.getElementById("today-date").innerHTML =
+            "Today is: " +
+            today.toDateString();
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,256 @@
+/*
+Program name: style.css
+Author: Mikaeel Nagri
+Date created: June 20, 2026
+Date last edited: June 30, 2026
+Version: 3.1
+Description: Styles for patient registration pages (Homework 3).
+*/
+
+/* page background and body text */
+body {
+    background-color: #e8f4f8;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+}
+
+/* headings */
+h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: #006699;
+    font-size: 28px;
+}
+
+h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: #004466;
+    font-size: 20px;
+}
+
+/* paragraphs */
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333333;
+    font-size: 14px;
+}
+
+/* links */
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #663399;
+}
+
+/* banner */
+.banner {
+    background-color: #ffffff;
+    border-bottom: 3px solid #006699;
+    padding: 15px;
+    text-align: center;
+}
+
+.banner img {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.company-name {
+    font-family: Georgia, "Times New Roman", serif;
+    color: #006699;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.date-text {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #555555;
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+/* main content area */
+#main-content {
+    padding: 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* form table */
+form table {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    padding: 15px;
+    width: 100%;
+}
+
+form th {
+    text-align: left;
+    font-family: Georgia, "Times New Roman", serif;
+    color: #004466;
+    padding: 8px;
+}
+
+form td {
+    padding: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+label {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333333;
+}
+
+/* name selectors for name fields */
+input[name="firstName"] {
+    width: 200px;
+}
+
+input[name="middleInitial"] {
+    width: 30px;
+}
+
+input[name="lastName"] {
+    width: 200px;
+}
+
+/* required fields  */
+input:required,
+select:required,
+textarea:required {
+    border-left: 3px solid #006699;
+}
+
+/* valid and invalid states  */
+input:user-valid,
+select:user-valid,
+textarea:user-valid {
+    border-color: #339966;
+}
+
+input:user-invalid,
+select:user-invalid,
+textarea:user-invalid {
+    border: 2px solid #cc0000;
+    background-color: #fff5f5;
+}
+
+.input-error {
+    border: 2px solid #cc0000;
+    background-color: #fff5f5;
+}
+
+/* footer */
+.footer {
+    background-color: #006699;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.footer p {
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* footer links need light color on dark background */
+.footer a {
+    color: #ffffff;
+}
+
+.footer a:visited {
+    color: #cce6f2;
+}
+
+.footer a:hover {
+    color: #e8f4f8;
+}
+
+.footer-company {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#contact-button {
+    background-color: #ffffff;
+    color: #006699;
+    border: 2px solid #ffffff;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#contact-button:hover {
+    background-color: #e8f4f8;
+}
+
+/* submit, validate, review and reset buttons */
+.button-row input[type="button"],
+.button-row input[type="submit"] {
+    background-color: #006699;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.button-row input[type="reset"] {
+    background-color: #cc6666;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* inline error messages under fields */
+.error-message {
+    color: red;
+    font-size: 12px;
+}
+
+#review-section {
+    display: none;
+    margin-top: 20px;
+}
+
+#review-section table {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    padding: 15px;
+    width: 100%;
+}
+
+#review-section th {
+    text-align: left;
+    font-family: Georgia, "Times New Roman", serif;
+    color: #004466;
+    padding: 8px;
+}
+
+#review-section td {
+    padding: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* status text in review table */
+.pass-text {
+    color: green;
+    font-weight: bold;
+}
+
+.error-text {
+    color: red;
+    font-weight: bold;
+}
